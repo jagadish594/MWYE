@@ -1,9 +1,8 @@
 import React from 'react';
 import '../styles/Accordion.css';
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
 
 const AccordionBox = () => {
-    
     console.log("Hello");
     return(
         <div className="Container">        
