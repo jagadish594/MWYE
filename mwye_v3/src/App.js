@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import CompareFoodByNutrients from './components/CompareFoodByNutrients';
 import AccordionBox from './components/AccordionBox';
+import DemoCheckbox from './components/DemoCheckBox';
 import Error from './components/Error';
 import Navigation from './components/Navigation';
 
@@ -24,6 +25,7 @@ class App extends Component {
               <Route path = "/About" component = {About} />
               <Route path = "/CompareFoodByNutrients" component = {CompareFoodByNutrients} />
               <Route path = "/AccordionBox" component = {AccordionBox} />
+              <Route path = "/DemoCheckbox" component = {DemoCheckbox} />
               <Route component = {Error} />
             </Switch>
 

@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-//import './App.css';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import basicNutrients from './basicNutrients.json'
 //List the foods by a nutrient
-//import BuildNutriTree from './BuildNutriTree';
-
+const nutriArr = [];
+const basicNutrientsBox = [];
+for(let item in basicNutrients){
+  basicNutrientsBox[item] = {
+    'nutrient_id': basicNutrients[item].nutrient_id,
+    'nutrient_name': basicNutrients[item].nutrient_name,
+    'nutrient_group': basicNutrients[item].nutrient_group,
+    'isCheckBoxChecked': false
+  }
+}
+//console.log(basicNutrientsBox);
 class CompareFoodByNutrients extends Component {
   constructor(props){
     super(props);
@@ -60,7 +68,7 @@ class CompareFoodByNutrients extends Component {
         }
       ],
       selectedNutrients: new Set(),
-      basicNutrientInfo: "",
+      basicNutrientInfo: basicNutrientsBox,
       isCheckBox509Checked: false,
       isCheckBox518Checked: false,
       isCheckBox516Checked: false,
@@ -75,8 +83,7 @@ class CompareFoodByNutrients extends Component {
     this.toggleChange515 = this.toggleChange515.bind(this);
     this.toggleChange514 = this.toggleChange514.bind(this);
     this.toggleChange513 = this.toggleChange513.bind(this);
-    this.getBasicNutrients = this.getBasicNutrients.bind(this);
-    this.toggleCheckBoxChange = this.toggleCheckBoxChange.bind(this);    
+    //this.toggleCheckBoxChange = this.toggleCheckBoxChange.bind(this);    
     this.handleUserInputButton = this.handleUserInputButton.bind(this);
     
   }
@@ -115,45 +122,27 @@ class CompareFoodByNutrients extends Component {
     });
   }
 
-  toggleCheckBoxChange(nutriID){
-    const basicNutriInfo = Array.from(this.state.basicNutrientInfo);
-    const nutrient = basicNutriInfo.filter(nutrient =>nutrient.nutrient_id === nutriID);
-    nutrient.isCheckBoxChecked = !'isCheckBoxChecked';
-    //basicNutriInfo[nutriID].isCheckBoxChecked = !this.state.isCheckBoxChecked;
-    this.setState({
-      basicNutrientInfo: basicNutriInfo
-    });
-  }
-
-  getBasicNutrients(){
-    const bNutri = basicNutrients;
-    const newBNutri = [];
-    for(let item in bNutri){
-      // newBNutri[bNutri[item].nutrient_id] = {
-      //   'nutrient_id': bNutri[item].nutrient_id,
-      //   'nutrient_name': bNutri[item].nutrient_name,
-      //   'nutrient_group': bNutri[item].nutrient_group,
-      //   'isCheckBoxChecked': false
-      // }
-      newBNutri[item] = {
-        'nutrient_id': bNutri[item].nutrient_id,
-        'nutrient_name': bNutri[item].nutrient_name,
-        'nutrient_group': bNutri[item].nutrient_group,
-        'isCheckBoxChecked': false
-      }
-    }
-    this.setState({
-      basicNutrientInfo: newBNutri
-    });
-
-  }
-  componentWillMount(){
-    //console.log(newBNutri);
-    //console.log(this.state.basicNutrientInfo);
-  }
-  componentDidMount(){
-    //this.getBasicNutrients();
-  }
+  // toggleCheckBoxChange(nutriID){
+  //   const nutrient = this.state.basicNutrientInfo.filter(nutrient =>nutrient.nutrient_id === nutriID);
+  //   //console.log(nutrient);
+  //   const basicNutri = this.state.basicNutrientInfo;
+  //   for(let item in basicNutri){
+  //     if(item.nutrient_id === nutriID){
+  //       if(nutrient.isCheckBoxChecked === true) nutrient.isCheckBoxChecked = false;
+  //       else nutrient.isCheckBoxChecked = true;
+  //     }
+  //   }
+  //   nutriArr.push(nutrient);
+    
+  //   if(nutriArr.length === 129)
+  //     this.setState({
+  //       basicNutrientInfo: nutriArr
+  //     });
+  //   //basicNutriInfo[nutriID].isCheckBoxChecked = !this.state.isCheckBoxChecked;
+  //   // this.setState({
+  //   //   basicNutrientInfo: basicNutriInfo
+  //   // });
+  // }
 
   componentDidUpdate(prevProps, prevState, props){
     if(this.state.url!==prevState.url && this.state.url!==""){
@@ -170,8 +159,6 @@ class CompareFoodByNutrients extends Component {
 
   handleUserInputButton(){
     //check for all true values and create URL as a string and set the state of URL
-    //const selectedNutriList = new Set(this.state.selectedNutrients);
-    this.getBasicNutrients();
     const selectedNutriList = new Set();
     let urlTemp = "";
     for(const attri in this.state){
@@ -246,12 +233,7 @@ class CompareFoodByNutrients extends Component {
 
   render() {  
     //console.log(this.state.basicNutrientInfo);
-    const bNutri = Array.from(this.state.basicNutrientInfo);
-    console.log(bNutri);
-    // const temp1000 = bNutri.filter(item => item.nutrient_group === 'Proximates');
-    // console.log(temp1000);
-    
-    //console.log(temp100);
+    const bNutri = this.state.basicNutrientInfo;    
     return(
       <div>
         <div>
@@ -266,7 +248,7 @@ class CompareFoodByNutrients extends Component {
               <h3 key = '513'><input type ='checkbox' checked = {this.state.isCheckBox513Checked} onChange={this.toggleChange513} />Alanine</h3>
               {
                 bNutri.map(item =>{
-                  return(<h3 key ={item.nutrient_id}><input type = 'checkbox' checked = {item.isCheckBoxChecked} onChange = {this.toggleCheckBoxChange(item.nutrient_id)}/>{item.nutrient_name}</h3>)
+                  return(<h3 key ={item.nutrient_id}><input type = 'checkbox' />{item.nutrient_name}</h3>)
                 })
               }
 
