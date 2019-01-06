@@ -31,17 +31,12 @@ class CompareFood extends Component {
               accessor: "name"
             },
             {
-              Header: "Weight",
+              Header: "Weight(Nutrient Value/100gms)",
               accessor: "weight"
             },
             {
               Header: "Measure",
               accessor: "measure"
-            },
-            {
-              Header: "Nutrient Value/100gms",
-              id: Math.random()*3,
-              accessor: row => row.nutrients[0].value *100/row.nutrients[0].gm
             }
           ],
           columns: [
@@ -54,17 +49,12 @@ class CompareFood extends Component {
               accessor: "name"
             },
             {
-              Header: "Weight",
+              Header: "Weight(Nutrient Value/100gms)",
               accessor: "weight"
             },
             {
               Header: "Measure",
               accessor: "measure"
-            },
-            {
-              Header: "Nutrient Value/100gms",
-              id: Math.random()*3,
-              accessor: row => row.nutrients[0].value *100/row.nutrients[0].gm
             }
           ],
           selectedNutrients: new Set(),
@@ -108,7 +98,6 @@ class CompareFood extends Component {
         
         }
         console.log(selectedNutriList);
-        //pasted from CFBN
         let urlTemp = "";
         for(let item of selectedNutriList){
             urlTemp = urlTemp+'&nutrients='+item;
@@ -119,12 +108,12 @@ class CompareFood extends Component {
         let tempColumns = this.state.initialColumns;
         const arrSelectedNutriList = Array.from(selectedNutriList);
         if(selectedNutriList.size > 0){
-            for(let i=tempColumns.length-1; i===5;i--){
+            for(let i=tempColumns.length-1; i===4;i--){
                 tempColumns.pop();
             }
-            if(tempColumns.length > 5){
+            if(tempColumns.length > 4){
                 let colLength = tempColumns.length;
-                while(colLength >=6){
+                while(colLength >=5){
                 tempColumns.pop();
                 colLength --;
                 }
@@ -142,13 +131,13 @@ class CompareFood extends Component {
         }
         //If no nutrients selected
         if(selectedNutriList.size === 0){
-            for(let i=tempColumns.length-1; i===5;i--){
+            for(let i=tempColumns.length-1; i===4;i--){
                 tempColumns.pop();
             }
 
-            if(tempColumns.length-1 > 5){
+            if(tempColumns.length-1 > 4){
                 let colLength = tempColumns.length;
-                while(colLength >=6){
+                while(colLength >=5){
                 tempColumns.pop();
                 colLength --;
                 }
