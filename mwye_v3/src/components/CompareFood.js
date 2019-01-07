@@ -4,6 +4,7 @@ import Checkbox from './Checkbox';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import basicNutrients from './basicNutrients.json';
+import './CustomStyle.css';
 
 const basicNutrientsBox = [];
 for(let item in basicNutrients){
@@ -15,10 +16,12 @@ for(let item in basicNutrients){
   }
 }
 
-const styleNutriGroup = {
-    fontSize: 20,
-    fontWeight: 'bold',
-    width: "15%"
+const styleCheckBoxColumn = {
+    width: "16.67%",
+    display: 'inline-block',
+    maxWidth: "20%",
+    margin: "auto",
+    padding: 2
 }
 
 class CompareFood extends Component {
@@ -102,19 +105,81 @@ class CompareFood extends Component {
         }
     }
   
+    createCheckbox = label =>{
+        switch(label.nutrient_group){
+            case 'Proximates':
+                return (
+                    <div style={styleCheckBoxColumn}>
+                        <h5>{this.getNutriGroup(label)}</h5>
+                        <Checkbox
+                            label={label.nutrient_name}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            key={label.nutrient_id}
+                        />
+                    </div>
+                );
+            case 'Minerals':
+                return (
+                    <div style={styleCheckBoxColumn}>
+                        <h5>{this.getNutriGroup(label)}</h5>
+                        <Checkbox
+                            label={label.nutrient_name}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            key={label.nutrient_id}
+                        />
+                    </div>
+                );
+            case 'Vitamins':
+                return (
+                    <div style={styleCheckBoxColumn}>
+                        <h5>{this.getNutriGroup(label)}</h5>
+                        <Checkbox
+                            label={label.nutrient_name}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            key={label.nutrient_id}
+                        />
+                    </div>
+                );
+            case 'Lipids':
+                return (
+                    <div style={styleCheckBoxColumn}>
+                        <h5>{this.getNutriGroup(label)}</h5>
+                        <Checkbox
+                            label={label.nutrient_name}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            key={label.nutrient_id}
+                        />
+                    </div>
+                );
+            case 'Amino Acids':
+                return (
+                    <div style={styleCheckBoxColumn}>
+                        <h5>{this.getNutriGroup(label)}</h5>
+                        <Checkbox
+                            label={label.nutrient_name}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            key={label.nutrient_id}
+                        />
+                    </div>
+                );
+            case 'Other':
+                return (
+                    <div style={styleCheckBoxColumn}>
+                        <h5>{this.getNutriGroup(label)}</h5>
+                        <Checkbox
+                            label={label.nutrient_name}
+                            handleCheckboxChange={this.toggleCheckbox}
+                            key={label.nutrient_id}
+                        />
+                    </div>
+                );
+            default:
+                return (
+                    <div>No match</div>
+                );
 
-    createCheckbox = label =>(
-        <div> 
-            <div style = {styleNutriGroup}>
-                {this.getNutriGroup(label)}
-            </div>
-            <Checkbox
-                label={label.nutrient_name}
-                handleCheckboxChange={this.toggleCheckbox}
-                key={label.nutrient_id}
-            />
-        </div>
-    );
+        }
+    }
   
     createCheckboxes = () => (
       basicNutrientsBox.map(this.createCheckbox)
@@ -163,9 +228,6 @@ class CompareFood extends Component {
         }
         //If no nutrients selected
         if(selectedNutriList.size === 0){
-            // for(let i=tempColumns.length-1; i===4;i--){
-            //     tempColumns.pop();
-            // }
             if(tempColumns.length-1 > 4){
                 let colLength = tempColumns.length;
                 while(colLength >=5){
@@ -198,17 +260,15 @@ class CompareFood extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-12">
-  
               <form onSubmit={this.handleFormSubmit}>
                 {this.createCheckboxes()}
-  
-                <button className="btn btn-default" type="submit">Submit</button>
+                <hr></hr>
+                <button className="btn btn-primary" type="submit">Submit</button>
               </form>
-  
             </div>
           </div>
           <div className="CompareFoodByNutrients">
-          <h2>List all Nutrient ids</h2>
+          <h2>List of Nutrient Information</h2>
           <ReactTable
             columns = {this.state.columns}
             data = {this.state.foods}

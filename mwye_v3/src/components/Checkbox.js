@@ -25,11 +25,15 @@ class Checkbox extends Component {
         fontSize: 16
     }
 
+    var styleInputCheckBox = {
+        margin: 3
+    }
     return (
       <div className="checkbox" style = {styleCheckBox}>
         <label>
           <input
             type="checkbox"
+            style={styleInputCheckBox}
             value={label}
             checked={isChecked}
             onChange={this.toggleCheckboxChange}
