@@ -21,9 +21,12 @@ class Checkbox extends Component {
   render() {
     const { label } = this.props;
     const { isChecked } = this.state;
+    var styleCheckBox = {
+        fontSize: 16
+    }
 
     return (
-      <div className="checkbox">
+      <div className="checkbox" style = {styleCheckBox}>
         <label>
           <input
             type="checkbox"

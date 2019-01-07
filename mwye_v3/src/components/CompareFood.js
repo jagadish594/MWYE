@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
 import Checkbox from './Checkbox';
 import ReactTable from 'react-table';
@@ -12,6 +13,12 @@ for(let item in basicNutrients){
     'nutrient_group': basicNutrients[item].nutrient_group,
     'isCheckBoxChecked': false
   }
+}
+
+const styleNutriGroup = {
+    fontSize: 20,
+    fontWeight: 'bold',
+    width: "15%"
 }
 
 class CompareFood extends Component {
@@ -64,6 +71,7 @@ class CompareFood extends Component {
 
     componentWillMount = () => {
       this.selectedCheckboxes = new Set();
+      this.prevNutriGroup = "";
     }
   
     componentDidUpdate(prevProps, prevState, props){
@@ -86,18 +94,42 @@ class CompareFood extends Component {
         this.selectedCheckboxes.add(label);
       }
     }
+
+    getNutriGroup(label){
+        if(this.prevNutriGroup !== label.nutrient_group){
+            this.prevNutriGroup = label.nutrient_group;
+            return label.nutrient_group;
+        }
+    }
   
+
+    createCheckbox = label =>(
+        <div> 
+            <div style = {styleNutriGroup}>
+                {this.getNutriGroup(label)}
+            </div>
+            <Checkbox
+                label={label.nutrient_name}
+                handleCheckboxChange={this.toggleCheckbox}
+                key={label.nutrient_id}
+            />
+        </div>
+    );
+  
+    createCheckboxes = () => (
+      basicNutrientsBox.map(this.createCheckbox)
+    )
+
+
     handleFormSubmit = formSubmitEvent => {
         formSubmitEvent.preventDefault();
         const selectedNutriList = new Set();
         for (const checkbox of this.selectedCheckboxes) {
             console.log(checkbox, 'is selected.');
             let nutrientInfo = basicNutrients.filter(nutrient => nutrient.nutrient_name === checkbox);
-            //console.log("NutrientInfo: ", nutrientInfo[0].nutrient_id);
             selectedNutriList.add(nutrientInfo[0].nutrient_id);
         
         }
-        console.log(selectedNutriList);
         let urlTemp = "";
         for(let item of selectedNutriList){
             urlTemp = urlTemp+'&nutrients='+item;
@@ -108,9 +140,9 @@ class CompareFood extends Component {
         let tempColumns = this.state.initialColumns;
         const arrSelectedNutriList = Array.from(selectedNutriList);
         if(selectedNutriList.size > 0){
-            for(let i=tempColumns.length-1; i===4;i--){
-                tempColumns.pop();
-            }
+            // for(let i=tempColumns.length-1; i===4;i--){
+            //     tempColumns.pop();
+            // }
             if(tempColumns.length > 4){
                 let colLength = tempColumns.length;
                 while(colLength >=5){
@@ -131,10 +163,9 @@ class CompareFood extends Component {
         }
         //If no nutrients selected
         if(selectedNutriList.size === 0){
-            for(let i=tempColumns.length-1; i===4;i--){
-                tempColumns.pop();
-            }
-
+            // for(let i=tempColumns.length-1; i===4;i--){
+            //     tempColumns.pop();
+            // }
             if(tempColumns.length-1 > 4){
                 let colLength = tempColumns.length;
                 while(colLength >=5){
@@ -152,7 +183,6 @@ class CompareFood extends Component {
         }
         //If nutrients selected
         else{
-            console.log(url1);
             this.setState({
                 url: url1,
                 selectedNutrients: selectedNutriList,
@@ -162,17 +192,6 @@ class CompareFood extends Component {
 
     }
   
-    createCheckbox = label => (
-      <Checkbox
-        label={label.nutrient_name}
-        handleCheckboxChange={this.toggleCheckbox}
-        key={label.nutrient_id}
-      />
-    )
-  
-    createCheckboxes = () => (
-      basicNutrientsBox.map(this.createCheckbox)
-    )
   
     render() {
       return (
