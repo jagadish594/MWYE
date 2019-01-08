@@ -12,7 +12,6 @@ const Navigation = () =>{
     <div>
       <NavLink to = "/" style={styleNavigation}>Home</NavLink>
       <NavLink to = "/About" style={styleNavigation}>About</NavLink>
-      <NavLink to = "/CompareFoodByNutrients" style={styleNavigation}>CompareFoodByNutrients</NavLink>
       <NavLink to = "/CompareBySpecificNutrient" style = {styleNavigation}>CompareBySpecificNutrient</NavLink>
       <NavLink to = "/NutrientsIn" style = {styleNavigation}>NutrientsIn</NavLink>
     </div>

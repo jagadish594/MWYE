@@ -1,0 +1,648 @@
+[
+    {
+      "nutrient_id": 255,
+      "nutrient_name": "Water",
+      "nutrient_group": "Proximates"
+    },
+    
+    {
+      "nutrient_id": 208,
+      "nutrient_name": "Energy",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 268,
+      "nutrient_name": "Energy",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 203,
+      "nutrient_name": "Protein",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 204,
+      "nutrient_name": "Total lipid (fat)",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 207,
+      "nutrient_name": "Ash",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 205,
+      "nutrient_name": "Carbohydrate, by difference",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 291,
+      "nutrient_name": "Fiber, total dietary",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 269,
+      "nutrient_name": "Sugars, total",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 210,
+      "nutrient_name": "Sucrose",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 211,
+      "nutrient_name": "Glucose (dextrose)",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 212,
+      "nutrient_name": "Fructose",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 213,
+      "nutrient_name": "Lactose",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 214,
+      "nutrient_name": "Maltose",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 287,
+      "nutrient_name": "Galactose",
+      "nutrient_group": "Proximates"
+    },
+    {
+      "nutrient_id": 301,
+      "nutrient_name": "Calcium, Ca",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 303,
+      "nutrient_name": "Iron, Fe",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 304,
+      "nutrient_name": "Magnesium, Mg",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 305,
+      "nutrient_name": "Phosphorus, P",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 306,
+      "nutrient_name": "Potassium, K",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 307,
+      "nutrient_name": "Sodium, Na",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 309,
+      "nutrient_name": "Zinc, Zn",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 312,
+      "nutrient_name": "Copper, Cu",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 315,
+      "nutrient_name": "Manganese, Mn",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 317,
+      "nutrient_name": "Selenium, Se",
+      "nutrient_group": "Minerals"
+    },
+    {
+      "nutrient_id": 401,
+      "nutrient_name": "Vitamin C, total ascorbic acid",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 404,
+      "nutrient_name": "Thiamin",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 405,
+      "nutrient_name": "Riboflavin",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 406,
+      "nutrient_name": "Niacin",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 410,
+      "nutrient_name": "Pantothenic acid",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 415,
+      "nutrient_name": "Vitamin B-6",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 417,
+      "nutrient_name": "Folate, total",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 431,
+      "nutrient_name": "Folic acid",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 432,
+      "nutrient_name": "Folate, food",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 435,
+      "nutrient_name": "Folate, DFE",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 421,
+      "nutrient_name": "Choline, total",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 454,
+      "nutrient_name": "Betaine",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 418,
+      "nutrient_name": "Vitamin B-12",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 578,
+      "nutrient_name": "Vitamin B-12, added",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 320,
+      "nutrient_name": "Vitamin A, RAE",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 319,
+      "nutrient_name": "Retinol",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 321,
+      "nutrient_name": "Carotene, beta",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 322,
+      "nutrient_name": "Carotene, alpha",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 334,
+      "nutrient_name": "Cryptoxanthin, beta",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 318,
+      "nutrient_name": "Vitamin A, IU",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 337,
+      "nutrient_name": "Lycopene",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 338,
+      "nutrient_name": "Lutein + zeaxanthin",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 323,
+      "nutrient_name": "Vitamin E (alpha-tocopherol)",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 573,
+      "nutrient_name": "Vitamin E, added",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 341,
+      "nutrient_name": "Tocopherol, beta",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 342,
+      "nutrient_name": "Tocopherol, gamma",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 343,
+      "nutrient_name": "Tocopherol, delta",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 344,
+      "nutrient_name": "Tocotrienol, alpha",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 345,
+      "nutrient_name": "Tocotrienol, beta",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 346,
+      "nutrient_name": "Tocotrienol, gamma",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 347,
+      "nutrient_name": "Tocotrienol, delta",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 328,
+      "nutrient_name": "Vitamin D (D2 + D3)",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 326,
+      "nutrient_name": "Vitamin D3 (cholecalciferol)",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 324,
+      "nutrient_name": "Vitamin D",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 430,
+      "nutrient_name": "Vitamin K (phylloquinone)",
+      "nutrient_group": "Vitamins"
+    },
+    {
+      "nutrient_id": 606,
+      "nutrient_name": "Fatty acids, total saturated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 607,
+      "nutrient_name": "4:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 608,
+      "nutrient_name": "6:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 609,
+      "nutrient_name": "8:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 610,
+      "nutrient_name": "10:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 611,
+      "nutrient_name": "12:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 612,
+      "nutrient_name": "14:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 652,
+      "nutrient_name": "15:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 613,
+      "nutrient_name": "16:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 653,
+      "nutrient_name": "17:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 614,
+      "nutrient_name": "18:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 615,
+      "nutrient_name": "20:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 624,
+      "nutrient_name": "22:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 654,
+      "nutrient_name": "24:0",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 645,
+      "nutrient_name": "Fatty acids, total monounsaturated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 625,
+      "nutrient_name": "14:1",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 697,
+      "nutrient_name": "15:1",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 626,
+      "nutrient_name": "16:1 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 673,
+      "nutrient_name": "16:1 c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 662,
+      "nutrient_name": "16:1 t",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 687,
+      "nutrient_name": "17:1",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 617,
+      "nutrient_name": "18:1 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 674,
+      "nutrient_name": "18:1 c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 663,
+      "nutrient_name": "18:1 t",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 628,
+      "nutrient_name": "20:1",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 630,
+      "nutrient_name": "22:1 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 676,
+      "nutrient_name": "22:1 c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 664,
+      "nutrient_name": "22:1 t",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 671,
+      "nutrient_name": "24:1 c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 646,
+      "nutrient_name": "Fatty acids, total polyunsaturated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 618,
+      "nutrient_name": "18:2 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 675,
+      "nutrient_name": "18:2 n-6 c,c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 670,
+      "nutrient_name": "18:2 CLAs",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 665,
+      "nutrient_name": "18:2 t not further defined",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 619,
+      "nutrient_name": "18:3 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 851,
+      "nutrient_name": "18:3 n-3 c,c,c (ALA)",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 685,
+      "nutrient_name": "18:3 n-6 c,c,c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 856,
+      "nutrient_name": "18:3i",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 627,
+      "nutrient_name": "18:4",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 672,
+      "nutrient_name": "20:2 n-6 c,c",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 689,
+      "nutrient_name": "20:3 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 853,
+      "nutrient_name": "20:3 n-6",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 620,
+      "nutrient_name": "20:4 undifferentiated",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 629,
+      "nutrient_name": "20:5 n-3 (EPA)",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 858,
+      "nutrient_name": "22:4",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 631,
+      "nutrient_name": "22:5 n-3 (DPA)",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 621,
+      "nutrient_name": "22:6 n-3 (DHA)",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 601,
+      "nutrient_name": "Cholesterol",
+      "nutrient_group": "Lipids"
+    },
+    {
+      "nutrient_id": 501,
+      "nutrient_name": "Tryptophan",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 502,
+      "nutrient_name": "Threonine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 503,
+      "nutrient_name": "Isoleucine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 504,
+      "nutrient_name": "Leucine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 505,
+      "nutrient_name": "Lysine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 506,
+      "nutrient_name": "Methionine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 507,
+      "nutrient_name": "Cystine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 508,
+      "nutrient_name": "Phenylalanine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 509,
+      "nutrient_name": "Tyrosine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 510,
+      "nutrient_name": "Valine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 511,
+      "nutrient_name": "Arginine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 512,
+      "nutrient_name": "Histidine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 513,
+      "nutrient_name": "Alanine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 514,
+      "nutrient_name": "Aspartic acid",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 515,
+      "nutrient_name": "Glutamic acid",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 516,
+      "nutrient_name": "Glycine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 517,
+      "nutrient_name": "Proline",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 518,
+      "nutrient_name": "Serine",
+      "nutrient_group": "Amino Acids"
+    },
+    {
+      "nutrient_id": 221,
+      "nutrient_name": "Alcohol, ethyl",
+      "nutrient_group": "Other"
+    },
+    {
+      "nutrient_id": 262,
+      "nutrient_name": "Caffeine",
+      "nutrient_group": "Other"
+    },
+    {
+      "nutrient_id": 263,
+      "nutrient_name": "Theobromine",
+      "nutrient_group": "Other"
+    }
+]

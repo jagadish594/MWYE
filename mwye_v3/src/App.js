@@ -3,9 +3,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import CompareFoodByNutrients from './components/CompareFoodByNutrients';
-import AccordionBox from './components/AccordionBox';
-import DemoCheckbox from './components/DemoCheckBox';
-import CompareFood from './components/CompareFood';
+import CompareBySpecificNutrient from './components/CompareBySpecificNutrient';
+import NutrientsIn from './components/NutrientsIn';
 import Error from './components/Error';
 import Navigation from './components/Navigation';
 
@@ -25,9 +24,8 @@ class App extends Component {
               <Route path = "/" component = {Home} exact />
               <Route path = "/About" component = {About} />
               <Route path = "/CompareFoodByNutrients" component = {CompareFoodByNutrients} />
-              <Route path = "/AccordionBox" component = {AccordionBox} />
-              <Route path = "/DemoCheckbox" component = {DemoCheckbox} />
-              <Route path = "/CompareFood" component = {CompareFood} />
+              <Route path = "/CompareBySpecificNutrient" component = {CompareBySpecificNutrient} />
+              <Route path = "/NutrientsIn" component = {NutrientsIn} />
               <Route component = {Error} />
             </Switch>
 

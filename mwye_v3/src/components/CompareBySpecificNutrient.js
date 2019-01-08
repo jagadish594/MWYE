@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import basicNutrients from './basicNutrients.json';
 import './CustomStyle.css';
+//import { LineChart, Line } from 'recharts';
 
 const basicNutrientsBox = [];
 for(let item in basicNutrients){
@@ -21,10 +22,10 @@ const styleCheckBoxColumn = {
     display: 'inline-block',
     maxWidth: "20%",
     margin: "auto",
-    padding: 2
+    //padding: 2
 }
 
-class CompareFood extends Component {
+class CompareBySpecificNutrient extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -267,7 +268,6 @@ class CompareFood extends Component {
               </form>
             </div>
           </div>
-          <div className="CompareFoodByNutrients">
           <h2>List of Nutrient Information</h2>
           <ReactTable
             columns = {this.state.columns}
@@ -275,9 +275,8 @@ class CompareFood extends Component {
             filterable
           />
         </div>
-        </div>
       );
     }
   }
   
-  export default CompareFood;
+  export default CompareBySpecificNutrient;

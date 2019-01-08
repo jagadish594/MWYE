@@ -3,7 +3,7 @@ import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import basicNutrients from './basicNutrients.json'
 //List the foods by a nutrient
-const nutriArr = [];
+//const nutriArr = [];
 const basicNutrientsBox = [];
 for(let item in basicNutrients){
   basicNutrientsBox[item] = {
@@ -256,7 +256,7 @@ class CompareFoodByNutrients extends Component {
           </div>
         </div>        
         <div className="CompareFoodByNutrients">
-          <h2>List all Nutrient ids</h2>
+          <h2>List all Nutrient ids(OLD - used only as a reminder)</h2>
           <ReactTable
             columns = {this.state.columns}
             data = {this.state.foods}
