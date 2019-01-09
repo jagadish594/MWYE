@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { Component } from 'react';
-import basicNutrients from './basicNutrients.json';
+//import basicNutrients from './basicNutrients.json';
 
 class NutrientsIn extends Component{
     constructor(props){

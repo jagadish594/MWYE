@@ -88,6 +88,10 @@ class CompareBySpecificNutrient extends Component {
               foods: responseData.report.foods
             });
           })
+          .catch(error =>{
+            console.log("Fetching and parsing error ", error)
+          })
+  
         }
     }
     
@@ -106,11 +110,11 @@ class CompareBySpecificNutrient extends Component {
         }
     }
   
-    createCheckbox = label =>{
+    createCheckbox = (label, index) =>{
         switch(label.nutrient_group){
             case 'Proximates':
                 return (
-                    <div style={styleCheckBoxColumn}>
+                    <div style={styleCheckBoxColumn} key={index}>
                         <h5>{this.getNutriGroup(label)}</h5>
                         <Checkbox
                             label={label.nutrient_name}
@@ -121,7 +125,7 @@ class CompareBySpecificNutrient extends Component {
                 );
             case 'Minerals':
                 return (
-                    <div style={styleCheckBoxColumn}>
+                    <div style={styleCheckBoxColumn} key={index}>
                         <h5>{this.getNutriGroup(label)}</h5>
                         <Checkbox
                             label={label.nutrient_name}
@@ -132,7 +136,7 @@ class CompareBySpecificNutrient extends Component {
                 );
             case 'Vitamins':
                 return (
-                    <div style={styleCheckBoxColumn}>
+                    <div style={styleCheckBoxColumn} key={index}>
                         <h5>{this.getNutriGroup(label)}</h5>
                         <Checkbox
                             label={label.nutrient_name}
@@ -143,7 +147,7 @@ class CompareBySpecificNutrient extends Component {
                 );
             case 'Lipids':
                 return (
-                    <div style={styleCheckBoxColumn}>
+                    <div style={styleCheckBoxColumn} key={index}>
                         <h5>{this.getNutriGroup(label)}</h5>
                         <Checkbox
                             label={label.nutrient_name}
@@ -154,7 +158,7 @@ class CompareBySpecificNutrient extends Component {
                 );
             case 'Amino Acids':
                 return (
-                    <div style={styleCheckBoxColumn}>
+                    <div style={styleCheckBoxColumn} key={index}>
                         <h5>{this.getNutriGroup(label)}</h5>
                         <Checkbox
                             label={label.nutrient_name}
@@ -165,7 +169,7 @@ class CompareBySpecificNutrient extends Component {
                 );
             case 'Other':
                 return (
-                    <div style={styleCheckBoxColumn}>
+                    <div style={styleCheckBoxColumn} key={index}>
                         <h5>{this.getNutriGroup(label)}</h5>
                         <Checkbox
                             label={label.nutrient_name}
@@ -176,7 +180,7 @@ class CompareBySpecificNutrient extends Component {
                 );
             default:
                 return (
-                    <div>No match</div>
+                    <div key={index}>No match</div>
                 );
 
         }
