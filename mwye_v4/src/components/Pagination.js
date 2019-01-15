@@ -5,7 +5,9 @@ const propTypes = {
     items: PropTypes.array.isRequired,
     onChangePage: PropTypes.func.isRequired,
     initialPage: PropTypes.number,
-    pageSize: PropTypes.number
+    pageSize: PropTypes.number, 
+    totalItems: PropTypes.number,
+    getPageNumber: PropTypes.func.isRequired
 }
  
 const defaultProps = {
@@ -40,10 +42,12 @@ class Pagination extends React.Component {
         if (page < 1 || page > pager.totalPages) {
             return;
         }
- 
+        
         // get new pager object for specified page
-        pager = this.getPager(items.length, page, pageSize);
+        //pager = this.getPager(items.length, page, pageSize);
+        pager = this.getPager(this.props.totalItems, page, pageSize);
 
+        this.props.getPageNumber(page);
         // get new page of items from items array
         var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
 
@@ -63,7 +67,8 @@ class Pagination extends React.Component {
  
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
- 
+        console.log("totalItems: ", totalItems);
+        console.log("totalPages: ", totalPages);
         var startPage, endPage;
         if (totalPages <= 10) {
             // less than 10 total pages so show all

@@ -13,10 +13,12 @@ class Search extends Component {
             query: '',
             exampleItems: [],
             pageOfItems: [],
-            result: []
+            result: [],
+            page: 1
         };
  
         this.onChangePage = this.onChangePage.bind(this);
+        this.getPageNumber = this.getPageNumber.bind(this);
     }
  
     onChangePage(pageOfItems) {
@@ -24,9 +26,20 @@ class Search extends Component {
         this.setState({ pageOfItems: pageOfItems });
     }
 
+    getPageNumber(page){
+        this.setState({ page: page });
+    }
+
+    componentWillUpdate(prevProps, prevState){
+        if(prevState.page !== this.state.page){
+            this.getInfo();
+        }
+    }
+
   getInfo = () => {
-    const offsetNum = 0;
-    axios.get(`${API_URL}&q=${this.state.query}&sort=n&max=5000&offset=${offsetNum}&api_key=${API_KEY}`)
+    const offsetNum = (this.state.page - 1)*25;
+    //const offsetNum = 0;
+    axios.get(`${API_URL}&q=${this.state.query}&sort=n&max=25&offset=${offsetNum}&api_key=${API_KEY}`)
       .then(({ data }) => {
         this.setState({
           result: data.list, // USDA returns an object named data, as does axios. So... data.list
@@ -52,6 +65,7 @@ class Search extends Component {
   }
   render() {
     console.log("total: ", this.state.result.total);
+    console.log("Example Items: ", this.state.exampleItems);
     return (
       <div>
         <div className="container">
@@ -72,7 +86,8 @@ class Search extends Component {
               </div>
                 <hr />
               <div>
-                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage} totalItems={this.state.result.total}/>
+                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}  
+                    getPageNumber = {this.getPageNumber} totalItems={this.state.result.total}/>
               </div>
             </div>
         </div>
