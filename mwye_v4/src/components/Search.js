@@ -14,7 +14,7 @@ class Search extends Component {
             exampleItems: [],
             pageOfItems: [],
             result: [],
-            page: 1
+            page: 0
         };
  
         this.onChangePage = this.onChangePage.bind(this);
@@ -36,9 +36,10 @@ class Search extends Component {
         }
     }
 
+    
+
   getInfo = () => {
     const offsetNum = (this.state.page - 1)*25;
-    //const offsetNum = 0;
     axios.get(`${API_URL}&q=${this.state.query}&sort=n&max=25&offset=${offsetNum}&api_key=${API_KEY}`)
       .then(({ data }) => {
         this.setState({
@@ -48,8 +49,7 @@ class Search extends Component {
       })
       .catch(error =>{
         console.log("Fetching and parsing error ", error)
-      })
-
+      });
   }
 
   handleInputChange = () => {
@@ -64,8 +64,6 @@ class Search extends Component {
         })
   }
   render() {
-    console.log("total: ", this.state.result.total);
-    console.log("Example Items: ", this.state.exampleItems);
     return (
       <div>
         <div className="container">

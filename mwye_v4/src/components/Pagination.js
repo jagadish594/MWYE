@@ -36,6 +36,7 @@ class Pagination extends React.Component {
     }
  
     setPage(page) {
+        
         var { items, pageSize } = this.props;
         var pager = this.state.pager;
  
@@ -43,11 +44,13 @@ class Pagination extends React.Component {
             return;
         }
         
+        // call getPageNumber function in parent component
+        this.props.getPageNumber(page);
+
         // get new pager object for specified page
         //pager = this.getPager(items.length, page, pageSize);
         pager = this.getPager(this.props.totalItems, page, pageSize);
-
-        this.props.getPageNumber(page);
+        
         // get new page of items from items array
         var pageOfItems = items.slice(pager.startIndex, pager.endIndex + 1);
 
@@ -67,8 +70,6 @@ class Pagination extends React.Component {
  
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
-        console.log("totalItems: ", totalItems);
-        console.log("totalPages: ", totalPages);
         var startPage, endPage;
         if (totalPages <= 10) {
             // less than 10 total pages so show all
@@ -94,7 +95,7 @@ class Pagination extends React.Component {
  
         // create an array of pages to ng-repeat in the pager control
         var pages = [...Array((endPage + 1) - startPage).keys()].map(i => startPage + i);
- 
+
         // return object with all pager properties required by the view
         return {
             totalItems: totalItems,
