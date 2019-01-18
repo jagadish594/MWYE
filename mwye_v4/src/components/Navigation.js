@@ -15,6 +15,7 @@ const Navigation = () =>{
       <NavLink to = "/CompareBySpecificNutrient" style = {styleNavigation}>CompareBySpecificNutrient</NavLink>
       <NavLink to = "/NutrientsIn" style = {styleNavigation}>NutrientsIn</NavLink>
       <NavLink to = "/Search" style = {styleNavigation}>Search</NavLink>
+      <NavLink to = "/Search2" style = {styleNavigation}>Search 2</NavLink>
     </div>
   );
 };

@@ -28,6 +28,7 @@ class Search extends Component {
 
     getPageNumber(page){
         this.setState({ page: page });
+        
     }
 
     componentWillUpdate(prevProps, prevState){
