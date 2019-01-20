@@ -12,7 +12,10 @@ class Search extends Component {
             query: '',
             exampleItems: [],
             result: [],
-            page: 0
+            page: 0,
+            foodData: [],
+            ingredients: [],
+            nutrients: []
         };
         this.getPageNumber = this.getPageNumber.bind(this);
     }
@@ -51,6 +54,26 @@ class Search extends Component {
         })
     }
 
+    handleFoodReport(ndbno){
+        //When food or item is clicked this will provide the link and get information
+        const foodReportURL1 = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=";
+        const foodReportURL2 = `&type=f&format=json&api_key=${API_KEY}`;
+        axios.get(foodReportURL1+ndbno+foodReportURL2)
+        .then(({ data }) => {
+          this.setState({
+            foodData: data.foods[0],
+            ingredients: data.foods[0].food.ing,
+            nutrients: data.foods[0].food.nutrients                    
+            })
+            console.log("foodData: ", this.state.foodData)
+            console.log("Ingredients: ", this.state.ingredients)
+        })
+        .catch(error =>{
+          console.log("Fetching and parsing error ", error)
+      });
+
+      //Need to work on passing this information to a separate page for detailed display
+    }
     render() {
         return (          
             <div className="container">
@@ -66,7 +89,7 @@ class Search extends Component {
                   <div>
                     <h1>List of Items</h1>
                     {this.state.exampleItems.map(item =>
-                        <div key={item.ndbno}>{item.name}</div>
+                        <div key={item.ndbno}><a href="#" onClick={() => this.handleFoodReport(item.ndbno)}>{item.name}</a></div>
                     )}
                   </div>
                     <hr />
