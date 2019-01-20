@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Pagination2 from './Pagination2';
+import APIKey from './usda_key.txt';
 
-const API_KEY = "OasCIRLEORrKEt93SMJqCIQVHVdKLB5IpVwxnrBN";
+//const API_KEY = "OasCIRLEORrKEt93SMJqCIQVHVdKLB5IpVwxnrBN";
+const API_KEY = APIKey;
 const API_URL = 'https://api.nal.usda.gov/ndb/search/?format=json';
 
 class Search extends Component {
@@ -56,6 +58,13 @@ class Search extends Component {
 
     handleFoodReport(ndbno){
         //When food or item is clicked this will provide the link and get information
+        this.getFoodReport(ndbno);
+
+      //Need to work on passing this information to a separate page for detailed display
+    }
+
+    getFoodReport(ndbno){
+        //Gets food/item data and stores on the state
         const foodReportURL1 = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=";
         const foodReportURL2 = `&type=f&format=json&api_key=${API_KEY}`;
         axios.get(foodReportURL1+ndbno+foodReportURL2)
@@ -72,7 +81,6 @@ class Search extends Component {
           console.log("Fetching and parsing error ", error)
       });
 
-      //Need to work on passing this information to a separate page for detailed display
     }
     render() {
         return (          
@@ -99,6 +107,13 @@ class Search extends Component {
                         items = {this.state.exampleItems}
                         getPageNumber = {this.getPageNumber}/>
                   </div>
+                  {/* 
+                  <div>
+                        <FoodReport ingredients = {this.state.ingredients} nutrients = {this.state.nutrients} 
+                         
+                        /> 
+                  </div>
+                  */}
                 </div>
             </div>    
         );
