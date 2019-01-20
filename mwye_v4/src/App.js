@@ -5,7 +5,6 @@ import About from './components/About';
 import CompareBySpecificNutrient from './components/CompareBySpecificNutrient';
 import NutrientsIn from './components/NutrientsIn';
 import Search from './components/Search';
-import Search2 from './components/Search2';
 import Error from './components/Error';
 import Navigation from './components/Navigation';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -23,7 +22,6 @@ class App extends Component {
           <Route path = "/CompareBySpecificNutrient" component = {CompareBySpecificNutrient} />
           <Route path = "/NutrientsIn" component = {NutrientsIn} />
           <Route path = "/Search" component = {Search} />
-          <Route path = "/Search2" component = {Search2} />
           <Route component = {Error} />
         </Switch>
 
