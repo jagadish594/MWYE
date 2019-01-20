@@ -4,9 +4,9 @@ import Checkbox from './Checkbox';
 import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import basicNutrients from './basicNutrients.json';
-//import './CustomStyle.css';
-//import { LineChart, Line } from 'recharts';
+import APIKey from './usda_key.json';
 
+const API_KEY = APIKey[0].USDAKey;
 const basicNutrientsBox = [];
 for(let item in basicNutrients){
   basicNutrientsBox[item] = {
@@ -29,7 +29,6 @@ class CompareBySpecificNutrient extends Component {
     constructor(props){
         super(props);
         this.state = {
-          //url: "http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=OasCIRLEORrKEt93SMJqCIQVHVdKLB5IpVwxnrBN&nutrients=204&max=100&offset=1000",
           url: "",
           foods: [],
           initialColumns: [
@@ -205,7 +204,7 @@ class CompareBySpecificNutrient extends Component {
             urlTemp = urlTemp+'&nutrients='+item;
         }
         
-        let url1 = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=OasCIRLEORrKEt93SMJqCIQVHVdKLB5IpVwxnrBN"+urlTemp+"&max=100&offset=1000";
+        let url1 = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key="+API_KEY+urlTemp+"&max=100&offset=1000";
             //Updating columns with selected nutrients
         let tempColumns = this.state.initialColumns;
         const arrSelectedNutriList = Array.from(selectedNutriList);

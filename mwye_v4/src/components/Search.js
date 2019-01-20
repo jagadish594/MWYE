@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Pagination2 from './Pagination2';
-import APIKey from './usda_key.txt';
+import APIKey from './usda_key.json';
 
-//const API_KEY = "OasCIRLEORrKEt93SMJqCIQVHVdKLB5IpVwxnrBN";
-const API_KEY = APIKey;
+const API_KEY = APIKey[0].USDAKey;
 const API_URL = 'https://api.nal.usda.gov/ndb/search/?format=json';
 
 class Search extends Component {
