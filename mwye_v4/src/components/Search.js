@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Pagination2 from './Pagination2';
 import APIKey from './usda_key.json';
+import FoodReport from './FoodReport';
+//import { Redirect } from 'react-router-dom';
+
 
 const API_KEY = APIKey[0].USDAKey;
 const API_URL = 'https://api.nal.usda.gov/ndb/search/?format=json';
@@ -58,7 +61,6 @@ class Search extends Component {
     handleFoodReport(ndbno){
         //When food or item is clicked this will provide the link and get information
         this.getFoodReport(ndbno);
-
       //Need to work on passing this information to a separate page for detailed display
     }
 
@@ -71,7 +73,8 @@ class Search extends Component {
           this.setState({
             foodData: data.foods[0],
             ingredients: data.foods[0].food.ing,
-            nutrients: data.foods[0].food.nutrients                    
+            nutrients: data.foods[0].food.nutrients,
+            nutrientName: data.foods[0].food.desc.name                    
             })
             console.log("foodData: ", this.state.foodData)
             console.log("Ingredients: ", this.state.ingredients)
@@ -81,6 +84,7 @@ class Search extends Component {
       });
 
     }
+
     render() {
         return (          
             <div className="container">
@@ -99,20 +103,20 @@ class Search extends Component {
                         <div key={item.ndbno}><a href="#" onClick={() => this.handleFoodReport(item.ndbno)}>{item.name}</a></div>
                     )}
                   </div>
-                    <hr />
+                    
                   <div>
                     <Pagination2 totalItems={this.state.result['total']} 
                         start = {this.state.result['start']}
                         items = {this.state.exampleItems}
                         getPageNumber = {this.getPageNumber}/>
                   </div>
-                  {/* 
+                  <hr />
                   <div>
-                        <FoodReport ingredients = {this.state.ingredients} nutrients = {this.state.nutrients} 
-                         
+                        <FoodReport ingredients = {this.state.ingredients.desc} nutrients = {this.state.nutrients} 
+                          nutrientName = {this.state.nutrientName}                        
                         /> 
                   </div>
-                  */}
+                  
                 </div>
             </div>    
         );
