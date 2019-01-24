@@ -35,7 +35,7 @@ class FoodReport extends React.Component{
                 <h3>{this.props.nutrientName}</h3>
                 <h5>Ingredients</h5>
                 <p>{this.props.ingredients}</p>
-                <h5>Nutrients Table</h5>
+                <h5 id="#NutriTable">Nutrients Table</h5>
                 <ReactTable
                 columns = {this.state.columns}
                 data = {this.props.nutrients}

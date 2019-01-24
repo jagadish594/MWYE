@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import basicNutrients from './basicNutrients.json';
 import APIKey from './usda_key.json';
+import './Style.css';
 
 const API_KEY = APIKey[0].USDAKey;
 const basicNutrientsBox = [];
@@ -33,10 +34,6 @@ class CompareBySpecificNutrient extends Component {
           foods: [],
           initialColumns: [
             {
-              Header: "NDBNo",
-              accessor: "ndbno"
-            },
-            {
               Header: "Food Name",
               accessor: "name"
             },
@@ -50,10 +47,6 @@ class CompareBySpecificNutrient extends Component {
             }
           ],
           columns: [
-            {
-              Header: "NDBNo",
-              accessor: "ndbno"
-            },
             {
               Header: "Food Name",
               accessor: "name"
@@ -204,15 +197,12 @@ class CompareBySpecificNutrient extends Component {
             urlTemp = urlTemp+'&nutrients='+item;
         }
         
-        let url1 = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key="+API_KEY+urlTemp+"&max=100&offset=1000";
+        let url1 = "https://api.nal.usda.gov/ndb/nutrients/?format=json&api_key="+API_KEY+urlTemp+"&max=1000&offset=1000";
             //Updating columns with selected nutrients
         let tempColumns = this.state.initialColumns;
         const arrSelectedNutriList = Array.from(selectedNutriList);
         if(selectedNutriList.size > 0){
-            // for(let i=tempColumns.length-1; i===4;i--){
-            //     tempColumns.pop();
-            // }
-            if(tempColumns.length > 4){
+            if(tempColumns.length > 3){
                 let colLength = tempColumns.length;
                 while(colLength >=5){
                 tempColumns.pop();
@@ -232,7 +222,7 @@ class CompareBySpecificNutrient extends Component {
         }
         //If no nutrients selected
         if(selectedNutriList.size === 0){
-            if(tempColumns.length-1 > 4){
+            if(tempColumns.length-1 > 3){
                 let colLength = tempColumns.length;
                 while(colLength >=5){
                 tempColumns.pop();
@@ -261,7 +251,8 @@ class CompareBySpecificNutrient extends Component {
   
     render() {
       return (
-        <div className="container">
+        <div className={["container", "styleCheckBoxContainer"].join(' ')}>
+          <h4>Check the nutrients to compare</h4>
           <div className="row">
             <div className="col-sm-12">
               <form onSubmit={this.handleFormSubmit}>

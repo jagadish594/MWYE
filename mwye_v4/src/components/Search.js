@@ -4,6 +4,7 @@ import Pagination2 from './Pagination2';
 import APIKey from './usda_key.json';
 import FoodReport from './FoodReport';
 //import { Redirect } from 'react-router-dom';
+import './Style.css';
 
 
 const API_KEY = APIKey[0].USDAKey;
@@ -61,7 +62,6 @@ class Search extends Component {
     handleFoodReport(ndbno){
         //When food or item is clicked this will provide the link and get information
         this.getFoodReport(ndbno);
-      //Need to work on passing this information to a separate page for detailed display
     }
 
     getFoodReport(ndbno){
@@ -87,10 +87,10 @@ class Search extends Component {
 
     render() {
         return (          
-            <div className="container">
+            <div className={["container", "styleSearch"].join(' ')}>
                 <form>
                     <input
-                    placeholder="Search for..."
+                    placeholder="Search for... butter"
                     ref={input => this.search = input}
                     onChange={this.handleInputChange}
                     />
@@ -98,9 +98,9 @@ class Search extends Component {
                 </form>
                 <div className="text-center">
                   <div>
-                    <h1>List of Items</h1>
+                    <h1>Food List</h1>
                     {this.state.exampleItems.map(item =>
-                        <div key={item.ndbno}><a href="#" onClick={() => this.handleFoodReport(item.ndbno)}>{item.name}</a></div>
+                        <div key={item.ndbno}><a href="#NutriTable" onClick={() => this.handleFoodReport(item.ndbno)}>{item.name}</a></div>
                     )}
                   </div>
                     

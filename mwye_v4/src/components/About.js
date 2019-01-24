@@ -1,8 +1,12 @@
 import React from 'react';
+import './Style.css';
 
 const About = () =>{
   return(
-    <p>This is About test us Page</p>
+    <div className= "Content">
+      <p>This is About test us Page</p>
+    </div>
+    
   );
 };
 

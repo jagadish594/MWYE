@@ -1,0 +1,23 @@
+  
+.navBar{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* Navigation bar end*/
+
+.styleSearch {
+  padding: 10px;
+  margin: 10px
+}
+
+.styleCheckBoxContainer{
+  padding: 5px;
+  margin: 10px
+}
+.Content{
+  text-align: center;
+}
