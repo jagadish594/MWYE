@@ -9,28 +9,13 @@ const Navigation = () =>{
     padding: 0,
     overflow: 'hidden',
     color: 'white'
-    //textAlign: 'center',
-    //position: 'absolute'
-
-      // textDecoration: 'none',
-      // padding: '10px 20px',
-      // display: 'block',
-      // color: '#FFF',
-      // textAlign: 'center',
-      
-  
   }
 
   const styleNavBar = {
-    // position: 'absolute',
-    // left: 0,
-    // height: 40,
     backgroundColor: '#2C64B4',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    
-  
   }
   return(
     <div style = {styleNavBar}>
